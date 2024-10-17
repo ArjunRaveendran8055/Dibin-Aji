@@ -2,11 +2,12 @@ import React, { useEffect, useState, useRef } from "react";
 import Hero from "./components/header/Hero";
 import Navbar from "./components/navBar/Navbar";
 import OurStory from "./components/ourStory/OurStory";
-import TimeLine from "./components/timeLine/TimeLine";
 import ImageGallery from "./components/gallery/ImageGallery";
 import RouteMap from "./components/map/RouteMap";
 import Loader from "./components/loader/Loader";
 import Footer from "./components/footer/Footer";
+import WeddingDetails from "./components/timeLine/WeddingDetails";
+import Thanks from "./components/thanks/Thanks";
 
 const App = () => {
   const [loader, setLoader] = useState(true);
@@ -36,13 +37,12 @@ const App = () => {
 
   return (
     <div>
-      {loader && <Loader />}
       <Navbar sectionRefs={sectionRefs} />
-      <Hero heroRef={heroRef} />
       <OurStory storiesRef={storiesRef} />
-      <TimeLine timeLineRef={timeLineRef} />
+      <Hero heroRef={heroRef} />
+      <WeddingDetails timeLineRef={timeLineRef} />
       <ImageGallery galleryRef={galleryRef} />
-      <RouteMap mapRef={mapRef} />
+      <Thanks/>
       <Footer />
     </div>
   );

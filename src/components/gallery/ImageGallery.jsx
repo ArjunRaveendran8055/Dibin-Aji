@@ -37,7 +37,7 @@ const ImageGallery = ({galleryRef}) => {
   return (
     <motion.section
       ref={ref}
-      className="sm:mt-32 lg:mt-40"
+      className="sm:mt-10 lg:mt-28"
       initial="hidden"
       animate={controls}
       style={{ overflowX: "hidden" }} // Prevent horizontal scroll due to initial animation state

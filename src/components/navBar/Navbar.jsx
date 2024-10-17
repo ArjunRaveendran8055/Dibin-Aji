@@ -9,11 +9,10 @@ const Navbar = ({ sectionRefs }) => {
     setToggle(!toggle); // Also close the mobile menu
     if (ref.current) {
       window.scrollTo({
-        top: ref.current.offsetTop-headerHeight,
+        top: ref.current.offsetTop - headerHeight,
         behavior: "smooth",
       });
     }
-    
   };
 
   return (
@@ -22,23 +21,24 @@ const Navbar = ({ sectionRefs }) => {
         {/* Logo Section */}
         <div className="text-xl font-bold text-gray-800">
           <a href="/" className="flex items-center">
-            <span className="text-gray-700 text-5xl font-dancingScript">
-              Wedding
+            <span className="text-gray-700 text-5xl font-greatVibes">
+              Dibin & Aji
             </span>
           </a>
         </div>
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-6 text-gray-700 font-semibold">
           <ul className="flex flex-row gap-5 font-bold">
-            <li onClick={() => handleNavClick(sectionRefs.hero)}>Home</li>
             <li onClick={() => handleNavClick(sectionRefs.ourStories)}>
               Our Stories
+            </li>
+            <li onClick={() => handleNavClick(sectionRefs.hero)}>
+              Wedding Date
             </li>
             <li onClick={() => handleNavClick(sectionRefs.timeLine)}>
               Wedding Details
             </li>
             <li onClick={() => handleNavClick(sectionRefs.gallery)}>Gallery</li>
-            <li onClick={() => handleNavClick(sectionRefs.map)}>Locations</li>
           </ul>
         </div>
         {/* Mobile Menu Button */}
@@ -72,30 +72,37 @@ const Navbar = ({ sectionRefs }) => {
           >
             <div className="sideBarChild w-52 h-full bg-white flex justify-center items-center">
               <ul className="flex flex-col gap-4">
-                <li className="text-black text-xl w-full border border-black shadow-md px-4 py-2 rounded-full text-center"
-                onClick={() =>{ handleNavClick(sectionRefs.hero)}}
-                >
-                  Home
-                </li>
-                <li className="text-black text-xl w-full border border-black shadow-mdpx-4 py-2 rounded-full text-center"
-                onClick={() => {handleNavClick(sectionRefs.ourStories)}}
+                <li
+                  className="text-black text-xl w-full border border-black shadow-mdpx-4 py-2 rounded-full text-center"
+                  onClick={() => {
+                    handleNavClick(sectionRefs.ourStories);
+                  }}
                 >
                   Our Story
                 </li>
-                <li className="text-black text-xl w-full border border-black shadow-md  px-4 py-2 rounded-full text-center"
-                onClick={() => {handleNavClick(sectionRefs.timeLine)}}
+                <li
+                  className="text-black text-xl w-full border border-black shadow-md px-4 py-2 rounded-full text-center"
+                  onClick={() => {
+                    handleNavClick(sectionRefs.hero);
+                  }}
+                >
+                  Wedding Date
+                </li>
+                <li
+                  className="text-black text-xl w-full border border-black shadow-md  px-4 py-2 rounded-full text-center"
+                  onClick={() => {
+                    handleNavClick(sectionRefs.timeLine);
+                  }}
                 >
                   Wedding Details
                 </li>
-                <li className="text-black text-xl w-full border border-black shadow-md  px-4 py-2 rounded-full text-center"
-                onClick={() => {handleNavClick(sectionRefs.gallery)}}
+                <li
+                  className="text-black text-xl w-full border border-black shadow-md  px-4 py-2 rounded-full text-center"
+                  onClick={() => {
+                    handleNavClick(sectionRefs.gallery);
+                  }}
                 >
                   Our Gallery
-                </li>
-                <li className="text-black text-xl w-full border border-black shadow-md px-4 py-2 rounded-full text-center"
-                onClick={() => {handleNavClick(sectionRefs.map)}}
-                >
-                  Location
                 </li>
               </ul>
             </div>

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
 import pinkFlower from "../../assets/flowerPink.png";
 const OurStory = ({ storiesRef }) => {
   const weddingDate = new Date("2024-11-10T11:30:00").getTime();
@@ -11,22 +10,8 @@ const OurStory = ({ storiesRef }) => {
     seconds: 0,
   });
 
-  const controls = useAnimation(); // Controls for paragraphs
-  const h2Controls = useAnimation(); // Controls for heading
-  const { ref, inView } = useInView({
-    threshold: 0.2, // Trigger when 20% is visible
-    triggerOnce: false, // Trigger in and out
-  });
 
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-      h2Controls.start("visible");
-    } else {
-      controls.start("hidden");
-      h2Controls.start("hidden");
-    }
-  }, [controls, h2Controls, inView]);
+
 
   useEffect(() => {
     const countdownInterval = setInterval(() => {
@@ -53,20 +38,10 @@ const OurStory = ({ storiesRef }) => {
     return () => clearInterval(countdownInterval);
   }, [weddingDate]);
 
-  // Variants for the heading animation (move from left)
-  const headingVariants = {
-    visible: { opacity: 1, x: 0, transition: { duration: 1 } },
-    hidden: { opacity: 0, x: -100, transition: { duration: 1 } },
-  };
 
-  // Variants for paragraph animation (fade in/out)
-  const paragraphVariants = {
-    visible: { opacity: 1, y: 0, transition: { duration: 1 } },
-    hidden: { opacity: 0, y: 50, transition: { duration: 1 } },
-  };
 
   return (
-    <section className="bg-white text-dark">
+    <section className="bg-white text-dark sm:pt-28 lg:pt-60 overflow-hidden">
       <div className="max-w-7xl mx-auto px-2 lg:px-0 text-center">
         <div
           ref={storiesRef}
@@ -74,12 +49,14 @@ const OurStory = ({ storiesRef }) => {
         >
           <motion.h2
             className="sm:text-5xl lg:text-7xl font-dancingScript text-darkblue mb-4 "
-            initial="hidden"
-            animate={h2Controls} // Control the heading animation based on visibility
-            variants={headingVariants}
+            initial={{ y: 250,scale:2, opacity: 0 }}
+            whileInView={{ y: 0, scale:1, opacity: 1 }}
+            viewport={{ once: true,  }}
+            transition={{ type: "spring", stiffness: 20,  }}
+            exit={{ y: 0, opacity: 1 }}
           >
             Our Story
-            <div className="flex items-center lg:80 md:w-96">
+            <div className="flex items-center  md:w-96">
               <div className="flex-grow border-t border-black"></div>
               <img src={pinkFlower} alt="" className="sm:w-8 md:w-12" />
               <div className="flex-grow border-t border-black"></div>
@@ -87,11 +64,12 @@ const OurStory = ({ storiesRef }) => {
           </motion.h2>
         </div>
         <motion.p
-          ref={ref} // This will be tracked for visibility
-          className=" sm:text-2xl md:text-3xl lg:text-4xl text-graylight font-dancingScript mb-8 tracking-wide"
-          initial="hidden"
-          animate={controls} // Control paragraph animations
-          variants={paragraphVariants}
+          // This will be tracked for visibility
+          className=" sm:text-2xl md:text-3xl lg:text-4xl text-graylight text-justify sm:px-1 font-dancingScript mb-8 tracking-wide"
+          initial={{ x: -250, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{ type: "spring", stiffness: 30, delay:0.5 }}
         >
           It all started with a smile, and from there, our journey together
           began. What began as a friendship grew into a love we never expected
@@ -100,24 +78,25 @@ const OurStory = ({ storiesRef }) => {
         </motion.p>
 
         <motion.p
-          ref={ref} // Track visibility for the second paragraph
-          className="sm:text-2xl md:text-3xl lg:text-4xl text-graylight font-dancingScript mb-8 tracking-wide"
-          initial="hidden"
-          animate={controls}
-          variants={paragraphVariants}
+          // Track visibility for the second paragraph
+          className="sm:text-2xl md:text-3xl lg:text-4xl text-graylight text-justify sm:px-1 font-dancingScript mb-8 tracking-wide"
+          initial={{ x: 250, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{ type: "spring", stiffness: 30, delay:0.8}}
         >
           On our wedding day, we want to celebrate not just our love story but
           the many stories of love and support that have brought us to this
           moment. Thank you for being a part of our journey.
         </motion.p>
-
         {/* Countdown */}
-        <div className="bg-cover">
+        <div className="bg-cover text-black">
           <motion.div
             className="mt-12 backdrop:blur-3xl"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1.6, delay: 1 }}
+            initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: false }}
+          transition={{ duration:1.2, stiffness: 30, delay:0.8}}
           >
             <div className="sm:text-3xl lg:text-5xl  font-dancingScript mb-6 backdrop-blur">
               Don't Miss the Day !
