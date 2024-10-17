@@ -38,11 +38,12 @@ const App = () => {
   return (
     <div>
       <Navbar sectionRefs={sectionRefs} />
-      <OurStory storiesRef={storiesRef} />
       <Hero heroRef={heroRef} />
+      <OurStory storiesRef={storiesRef} />
+
       <WeddingDetails timeLineRef={timeLineRef} />
       <ImageGallery galleryRef={galleryRef} />
-      <Thanks/>
+      <Thanks />
       <Footer />
     </div>
   );

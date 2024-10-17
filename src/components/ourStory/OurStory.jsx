@@ -41,7 +41,7 @@ const OurStory = ({ storiesRef }) => {
 
 
   return (
-    <section className="bg-white text-dark sm:pt-28 lg:pt-60 overflow-hidden">
+    <section className="bg-white text-dark sm:pt-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-2 lg:px-0 text-center">
         <div
           ref={storiesRef}
