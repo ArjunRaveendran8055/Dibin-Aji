@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import CardSwipe from "./CardSwipe";
 const Hero = ({heroRef}) => {
   return (
-    <section ref={heroRef} className="mt-[80px] w-full overflow-hidden lg:py-10">
+    <section ref={heroRef} className="mt-[80px] w-full overflow-hidden sm:pt-10 sm:pb-10 lg:pt-40 lg:pb-20">
       <div
         className={`main-conainer flex sm:flex-col lg:flex-row  bg-white text-black
       sm:p-0 md:px-20 xl:px:20  lg:px-2  lg:gap-3`}
