@@ -52,7 +52,7 @@ const Hero = ({heroRef}) => {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: false }}
-            transition={{  duration:2, delay:1.5 }}
+            transition={{  duration:2, }}
           >
             <CardSwipe/>
           </motion.div>
