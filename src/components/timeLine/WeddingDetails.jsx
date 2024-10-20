@@ -5,11 +5,10 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot, FaMapLocation } from "react-icons/fa6";
 
 const WeddingDetails = ({ timeLineRef }) => {
-  const venueUrl =
-    "https://www.google.com/maps/place/St.+Thomas+Kottakkavu+Forane+Church,+North+Paravur/@10.150558,76.218166,5068m/data=!3m1!1e3!4m6!3m5!1s0x3b081a795d8f53c3:0xf569a361d42788ee!8m2!3d10.1505581!4d76.218166!16s%2Fm%2F012w4fc5?hl=en&entry=ttu&g_ep=EgoyMDI0MTAwMS4wIKXMDSoASAFQAw%3D%3D";
-  const homeUrl =
-    "https://www.google.com/maps/place/10%C2%B009'21.8%22N+76%C2%B013'09.4%22E/@10.155949,76.219536,21z/data=!4m4!3m3!8m2!3d10.1560556!4d76.2192778?hl=en&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D";
-
+  const engageUrl =
+    "https://www.google.com/maps/place/St.+George+Syro-Malabar+Church/@10.102177,76.27637,16z/data=!4m6!3m5!1s0x3b080e2b64dc93a1:0x154f48a305454d22!8m2!3d10.1021769!4d76.2763703!16s%2Fg%2F1vvdsn6g?hl=en&entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D";
+  const recpUrl =
+    "https://www.google.com/maps/place/Kbees+Durbar+convention+centre/@10.226715,76.205518,16z/data=!4m6!3m5!1s0x3b081b8c145507b1:0xe1f143c6fa7d91cf!8m2!3d10.2267148!4d76.2055182!16s%2Fg%2F11cm120y2r?hl=en&entry=ttu&g_ep=EgoyMDI0MTAxNi4wIKXMDSoASAFQAw%3D%3D";
   const weddingDate = new Date("2024-11-10T11:30:00").getTime();
   const [timeLeftWedding, setTimeLeftWedding] = useState({
     days: 0,
@@ -102,26 +101,26 @@ const WeddingDetails = ({ timeLineRef }) => {
           </motion.div>
           <div className="MapMainDiv w-full justify-between flex sm:flex-col lg:flex-row sm:pt-3 ">
             <div className="textContainerDiv flex flex-col sm:gap-5 lg:gap-10">
-              <span className="sm:text-2xl lg:text-3xl font-semibold text-center">
-                Manapurath House
+              <span className="sm:text-3xl lg:text-3xl font-semibold text-center">
+                St. George Syro-Malabar Church Hall
               </span>
               <span className="flex flex-col ">
                 <span className="date flex flex-row p-1 gap-2 items-center sm:text-xl lg:text-2xl font-normal">
                   <FaCalendarAlt size={25} />
-                  08 November - 10 November 2024
+                  November 3rd 2024
                 </span>
-                <span className="time pl-10 text-lg">11:00 am - 01:30 pm</span>
+                <span className="time pl-10 text-lg">11:00 am</span>
               </span>
               <span className="flex flex-col">
                 <span className="ExactLocation flex flex-row p-1 gap-2 items-center sm:text-lg lg:text-2xl font-normal">
-                  <FaLocationDot size={25} /> Cheriya PallamThuruth, North
-                  Paravur
+                  <FaLocationDot size={25} />Koonammavu - Panayikulam
+                  Rd, Kongorppilly
                 </span>
                 <span className="phoneHeading pl-10">Event Address</span>
               </span>
               <span className="flex flex-col">
                 <span className="phoneNumber flex flex-row p-1 gap-2 items-center sm:text-lg lg:text-2xl font-normal">
-                  <FaPhoneAlt size={25} /> +91 6282008742
+                  <FaPhoneAlt size={25} /> +91 98478 90365
                 </span>
                 <span className="phoneHeading pl-10">Phone Number</span>
               </span>
@@ -130,17 +129,17 @@ const WeddingDetails = ({ timeLineRef }) => {
               <div className="flex flex-col w-full h-full">
                 <div className="font-black sm:text-xl lg:text-2xl flex w-full justify-end ">
                   <button
-                    onClick={() => window.open(homeUrl, "_blank")}
+                    onClick={() => window.open(engageUrl, "_blank")}
                     className="bg-white border border-black  hover:bg-gray-light transition-colors duration-300 text-black font-bold py-2 px-4 hover:shadow-lg rounded-xl inline-flex items-center"
                   >
                     <FaMapLocation className="text-blue w-6 h-6 mr-2" />
                     <span className="text-darkblue">Open Map</span>
                   </button>
                 </div>
-                <div className="sm:hidden lg:block ">
+                <div className="sm:hidden lg:block lg:pt-5">
                   <iframe
                     className="rounded-lg flex sm:w-full h-[300px] lg:w-[650px] lg:h-[450px]"
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3927.302255358872!2d76.21671507503329!3d10.15606798995746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDA5JzIxLjgiTiA3NsKwMTMnMDkuNCJF!5e0!3m2!1sen!2sin!4v1727613422247!5m2!1sen!2sinhttps://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3927.302255358872!2d76.21671507503329!3d10.15606798995746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDA5JzIxLjgiTiA3NsKwMTMnMDkuNCJF!5e0!3m2!1sen!2sin!4v1727613422247!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3927.962237318041!2d76.2763703!3d10.1021769!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b080e2b64dc93a1%3A0x154f48a305454d22!2sSt.%20George%20Syro-Malabar%20Church!5e0!3m2!1sen!2sin!4v1729434392978!5m2!1sen!2sin"
                     loading="lazy"
                   ></iframe>
                 </div>
@@ -149,36 +148,36 @@ const WeddingDetails = ({ timeLineRef }) => {
           </div>
           {/* Countdown */}
           <div className="bg-cover text-black px-2">
-              <motion.div
-                className="mt-12 backdrop:blur-3xl"
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: false }}
-                transition={{ duration: 1.2, stiffness: 30, delay: 0.2 }}
-              >
-                <div className="sm:text-3xl lg:text-5xl text-center  font-dancingScript mb-6 backdrop-blur">
-                  Don't Miss the Day !
+            <motion.div
+              className="mt-12 backdrop:blur-3xl"
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: false }}
+              transition={{ duration: 1.2, stiffness: 30, delay: 0.2 }}
+            >
+              <div className="sm:text-3xl lg:text-5xl text-center  font-dancingScript mb-6 backdrop-blur">
+                Don't Miss the Day !
+              </div>
+              <div className="flex justify-center sm:text-xl lg:gap-10 lg:text-5xl font-dancingScript space-x-8 text-">
+                <div className="flex flex-col gap-3">
+                  <div className=" ">{timeLeftEngagement.days}</div>
+                  <div className=" font-Playfiar text-2xl">Days</div>
                 </div>
-                <div className="flex justify-center sm:text-xl lg:gap-10 lg:text-5xl font-dancingScript space-x-8 text-">
-                  <div className="flex flex-col gap-3">
-                    <div className=" ">{timeLeftEngagement.days}</div>
-                    <div className=" font-Playfiar text-2xl">Days</div>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <div className="  ">{timeLeftEngagement.hours}</div>
-                    <div className=" font-Playfiar text-2xl">Hours</div>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <div className=" ">{timeLeftEngagement.minutes}</div>
-                    <div className=" font-Playfiar text-2xl">Mins</div>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <div className=" te">{timeLeftEngagement.seconds}</div>
-                    <div className=" font-Playfiar text-2xl">Secs</div>
-                  </div>
+                <div className="flex flex-col gap-3">
+                  <div className="  ">{timeLeftEngagement.hours}</div>
+                  <div className=" font-Playfiar text-2xl">Hours</div>
                 </div>
-              </motion.div>
-            </div>
+                <div className="flex flex-col gap-3">
+                  <div className=" ">{timeLeftEngagement.minutes}</div>
+                  <div className=" font-Playfiar text-2xl">Mins</div>
+                </div>
+                <div className="flex flex-col gap-3">
+                  <div className=" te">{timeLeftEngagement.seconds}</div>
+                  <div className=" font-Playfiar text-2xl">Secs</div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         <div className="imgTextContainer sm:pt-7 lg:pt-20  flex sm:flex-col  w-full items-center sm:justify-center">
@@ -207,47 +206,46 @@ const WeddingDetails = ({ timeLineRef }) => {
             joyous union, setting the perfect tone for their new journey as
             husband and wife.
           </motion.div>
-          <div className="MapMainDiv w-full justify-between flex sm:flex-col lg:flex-row ">
+          <div className="MapMainDiv w-full justify-between flex sm:flex-col lg:flex-row sm:pt-2">
             <div className="textContainerDiv flex flex-col sm:gap-5 lg:gap-10">
-              <span className="sm:text-2xl lg:text-3xl font-semibold text-center">
-                Manapurath House
+              <span className="sm:text-3xl lg:text-3xl font-semibold text-center">
+                Kbees Durbar convention centre
               </span>
               <span className="flex flex-col ">
                 <span className="date flex flex-row p-1 gap-2 items-center sm:text-xl lg:text-2xl font-normal">
                   <FaCalendarAlt size={25} />
-                  08 November - 10 November 2024
+                  10th November 2024
                 </span>
-                <span className="time pl-10 text-lg">11:00 am - 01:30 pm</span>
+                <span className="time pl-10 text-lg">05:00 pm - 08:00 pm</span>
               </span>
               <span className="flex flex-col">
                 <span className="ExactLocation flex flex-row p-1 gap-2 items-center sm:text-lg lg:text-2xl font-normal">
-                  <FaLocationDot size={25} /> Cheriya PallamThuruth, North
-                  Paravur
+                  <FaLocationDot size={25} /> Near Pullut Bridge, Kodungallur
                 </span>
                 <span className="phoneHeading pl-10">Event Address</span>
               </span>
               <span className="flex flex-col">
                 <span className="phoneNumber flex flex-row p-1 gap-2 items-center sm:text-lg lg:text-2xl font-normal">
-                  <FaPhoneAlt size={25} /> +91 6282008742
+                  <FaPhoneAlt size={25} /> +91 99955 70060
                 </span>
                 <span className="phoneHeading pl-10">Phone Number</span>
               </span>
             </div>
             <div className="mapContainer sm:p-2 lg:p-0 sm:mt-5 lg:mt-0 ">
               <div className="flex flex-col w-full h-full">
-                <div className="font-black sm:text-xl lg:text-2xl flex w-full justify-end ">
+                <div className="font-black sm:text-xl lg:text-2xl flex w-full justify-end lg">
                   <button
-                    onClick={() => window.open(homeUrl, "_blank")}
+                    onClick={() => window.open(recpUrl, "_blank")}
                     className="bg-white border border-black  hover:bg-gray-light transition-colors duration-300 text-black font-bold py-2 px-4 hover:shadow-lg rounded-xl inline-flex items-center"
                   >
                     <FaMapLocation className="text-blue w-6 h-6 mr-2" />
                     <span className="text-darkblue">Open Map</span>
                   </button>
                 </div>
-                <div className="sm:hidden lg:block ">
+                <div className="sm:hidden lg:block lg:pt-5">
                   <iframe
                     className="rounded-lg flex sm:w-full h-[300px] lg:w-[650px] lg:h-[450px]"
-                    src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3927.302255358872!2d76.21671507503329!3d10.15606798995746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDA5JzIxLjgiTiA3NsKwMTMnMDkuNCJF!5e0!3m2!1sen!2sin!4v1727613422247!5m2!1sen!2sinhttps://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3927.302255358872!2d76.21671507503329!3d10.15606798995746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDA5JzIxLjgiTiA3NsKwMTMnMDkuNCJF!5e0!3m2!1sen!2sin!4v1727613422247!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3926.4318103416194!2d76.2055182!3d10.2267148!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b081b8c145507b1%3A0xe1f143c6fa7d91cf!2sKbees%20Durbar%20convention%20centre!5e0!3m2!1sen!2sin!4v1729433142101!5m2!1sen!2sin"
                     loading="lazy"
                   ></iframe>
                 </div>
@@ -255,38 +253,38 @@ const WeddingDetails = ({ timeLineRef }) => {
             </div>
           </div>
         </div>
-                    {/* Countdown */}
-                    <div className="bg-cover text-black px-2">
-              <motion.div
-                className="mt-12 backdrop:blur-3xl"
-                initial={{ x: 50, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                viewport={{ once: false }}
-                transition={{ duration: 1.2, stiffness: 30, delay: 0.2 }}
-              >
-                <div className="sm:text-3xl lg:text-5xl text-center  font-dancingScript mb-6 backdrop-blur">
-                  Don't Miss the Day !
-                </div>
-                <div className="flex justify-center sm:text-xl lg:gap-10 lg:text-5xl font-dancingScript space-x-8 text-">
-                  <div className="flex flex-col gap-3">
-                    <div className=" ">{timeLeftWedding.days}</div>
-                    <div className=" font-Playfiar text-2xl">Days</div>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <div className="  ">{timeLeftWedding.hours}</div>
-                    <div className=" font-Playfiar text-2xl">Hours</div>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <div className=" ">{timeLeftWedding.minutes}</div>
-                    <div className=" font-Playfiar text-2xl">Mins</div>
-                  </div>
-                  <div className="flex flex-col gap-3">
-                    <div className=" te">{timeLeftWedding.seconds}</div>
-                    <div className=" font-Playfiar text-2xl">Secs</div>
-                  </div>
-                </div>
-              </motion.div>
+        {/* Countdown */}
+        <div className="bg-cover text-black px-2">
+          <motion.div
+            className="mt-12 backdrop:blur-3xl"
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: false }}
+            transition={{ duration: 1.2, stiffness: 30, delay: 0.2 }}
+          >
+            <div className="sm:text-3xl lg:text-5xl text-center  font-dancingScript mb-6 backdrop-blur">
+              Don't Miss the Day !
             </div>
+            <div className="flex justify-center sm:text-xl lg:gap-10 lg:text-5xl font-dancingScript space-x-8 text-">
+              <div className="flex flex-col gap-3">
+                <div className=" ">{timeLeftWedding.days}</div>
+                <div className=" font-Playfiar text-2xl">Days</div>
+              </div>
+              <div className="flex flex-col gap-3">
+                <div className="  ">{timeLeftWedding.hours}</div>
+                <div className=" font-Playfiar text-2xl">Hours</div>
+              </div>
+              <div className="flex flex-col gap-3">
+                <div className=" ">{timeLeftWedding.minutes}</div>
+                <div className=" font-Playfiar text-2xl">Mins</div>
+              </div>
+              <div className="flex flex-col gap-3">
+                <div className=" te">{timeLeftWedding.seconds}</div>
+                <div className=" font-Playfiar text-2xl">Secs</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
