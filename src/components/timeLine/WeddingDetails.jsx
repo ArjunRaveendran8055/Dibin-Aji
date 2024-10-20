@@ -128,7 +128,7 @@ const WeddingDetails = ({ timeLineRef }) => {
             </div>
             <div className="mapContainer sm:p-2 lg:p-0 sm:mt-5 lg:mt-0 ">
               <div className="flex flex-col w-full h-full">
-                <div className="font-black sm:text-xl lg:text-2xl flex w-full justify-end pb-10">
+                <div className="font-black sm:text-xl lg:text-2xl flex w-full justify-end ">
                   <button
                     onClick={() => window.open(homeUrl, "_blank")}
                     className="bg-white border border-black  hover:bg-gray-light transition-colors duration-300 text-black font-bold py-2 px-4 hover:shadow-lg rounded-xl inline-flex items-center"
@@ -146,14 +146,15 @@ const WeddingDetails = ({ timeLineRef }) => {
                 </div>
               </div>
             </div>
-            {/* Countdown */}
-            <div className="bg-cover text-black px-2">
+          </div>
+          {/* Countdown */}
+          <div className="bg-cover text-black px-2">
               <motion.div
                 className="mt-12 backdrop:blur-3xl"
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: false }}
-                transition={{ duration: 1.2, stiffness: 30, delay: 0.8 }}
+                transition={{ duration: 1.2, stiffness: 30, delay: 0.2 }}
               >
                 <div className="sm:text-3xl lg:text-5xl text-center  font-dancingScript mb-6 backdrop-blur">
                   Don't Miss the Day !
@@ -178,7 +179,6 @@ const WeddingDetails = ({ timeLineRef }) => {
                 </div>
               </motion.div>
             </div>
-          </div>
         </div>
 
         <div className="imgTextContainer sm:pt-7 lg:pt-20  flex sm:flex-col  w-full items-center sm:justify-center">
@@ -253,14 +253,16 @@ const WeddingDetails = ({ timeLineRef }) => {
                 </div>
               </div>
             </div>
-            {/* Countdown */}
-            <div className="bg-cover text-black px-2">
+          </div>
+        </div>
+                    {/* Countdown */}
+                    <div className="bg-cover text-black px-2">
               <motion.div
                 className="mt-12 backdrop:blur-3xl"
                 initial={{ x: 50, opacity: 0 }}
                 whileInView={{ x: 0, opacity: 1 }}
                 viewport={{ once: false }}
-                transition={{ duration: 1.2, stiffness: 30, delay: 0.8 }}
+                transition={{ duration: 1.2, stiffness: 30, delay: 0.2 }}
               >
                 <div className="sm:text-3xl lg:text-5xl text-center  font-dancingScript mb-6 backdrop-blur">
                   Don't Miss the Day !
@@ -285,8 +287,6 @@ const WeddingDetails = ({ timeLineRef }) => {
                 </div>
               </motion.div>
             </div>
-          </div>
-        </div>
       </div>
     </section>
   );
