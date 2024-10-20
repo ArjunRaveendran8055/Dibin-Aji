@@ -1,32 +1,90 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 import { FaCalendarAlt } from "react-icons/fa";
 import { FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot, FaMapLocation } from "react-icons/fa6";
 
 const WeddingDetails = ({ timeLineRef }) => {
-  
   const venueUrl =
     "https://www.google.com/maps/place/St.+Thomas+Kottakkavu+Forane+Church,+North+Paravur/@10.150558,76.218166,5068m/data=!3m1!1e3!4m6!3m5!1s0x3b081a795d8f53c3:0xf569a361d42788ee!8m2!3d10.1505581!4d76.218166!16s%2Fm%2F012w4fc5?hl=en&entry=ttu&g_ep=EgoyMDI0MTAwMS4wIKXMDSoASAFQAw%3D%3D";
   const homeUrl =
     "https://www.google.com/maps/place/10%C2%B009'21.8%22N+76%C2%B013'09.4%22E/@10.155949,76.219536,21z/data=!4m4!3m3!8m2!3d10.1560556!4d76.2192778?hl=en&entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D";
 
+  const weddingDate = new Date("2024-11-10T11:30:00").getTime();
+  const [timeLeftWedding, setTimeLeftWedding] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  const engagementDate = new Date("2024-11-03T11:30:00").getTime();
+  const [timeLeftEngagement, setTimeLeftEngagement] = useState({
+    days: 0,
+    hours: 0,
+    minutes: 0,
+    seconds: 0,
+  });
+
+  useEffect(() => {
+    const countdownWeddingInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const timeRemaining = weddingDate - now;
+
+      if (timeRemaining < 0) {
+        setTimeLeftWedding({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        clearInterval(countdownInterval);
+      } else {
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        setTimeLeftWedding({ days, hours, minutes, seconds });
+      }
+    }, 1000);
+
+    const countdownEngagementInterval = setInterval(() => {
+      const now = new Date().getTime();
+      const timeRemaining = engagementDate - now;
+
+      if (timeRemaining < 0) {
+        setTimeLeftWedding({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        clearInterval(countdownEngagementInterval);
+      } else {
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor(
+          (timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (timeRemaining % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+        setTimeLeftEngagement({ days, hours, minutes, seconds });
+      }
+    }, 1000);
+
+    return () => {
+      clearInterval(countdownWeddingInterval);
+      clearInterval(countdownEngagementInterval);
+    };
+  }, [weddingDate, engagementDate]);
 
   return (
-    <section
-      ref={timeLineRef}
-      className="sm:pt-10 lg:pt-40 overflow-hidden"
-    >
+    <section ref={timeLineRef} className="sm:pt-7 lg:pt-40 overflow-hidden">
       <div className="mainImgDiv max-w-7xl mx-auto sm:px-2 lg:px-0 flex flex-col items-center">
         <div className="imgTextContainer flex sm:flex-col  w-full items-center sm:justify-center">
           <motion.div
             initial={{ x: 250, opacity: 0 }}
-            whileInView={{ x: 0,  opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
             viewport={{ once: false }}
             transition={{ type: "spring", stiffness: 20 }}
             className="imgTitleContainer text-5xl font-greatVibes text-gradient p-2"
           >
-            Engagement Details
+            Engagement
           </motion.div>
           <motion.div
             initial={{ x: -250, scale: 2, opacity: 0 }}
@@ -88,10 +146,42 @@ const WeddingDetails = ({ timeLineRef }) => {
                 </div>
               </div>
             </div>
+            {/* Countdown */}
+            <div className="bg-cover text-black px-2">
+              <motion.div
+                className="mt-12 backdrop:blur-3xl"
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1.2, stiffness: 30, delay: 0.8 }}
+              >
+                <div className="sm:text-3xl lg:text-5xl text-center  font-dancingScript mb-6 backdrop-blur">
+                  Don't Miss the Day !
+                </div>
+                <div className="flex justify-center sm:text-xl lg:gap-10 lg:text-5xl font-dancingScript space-x-8 text-">
+                  <div className="flex flex-col gap-3">
+                    <div className=" ">{timeLeftEngagement.days}</div>
+                    <div className=" font-Playfiar text-2xl">Days</div>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <div className="  ">{timeLeftEngagement.hours}</div>
+                    <div className=" font-Playfiar text-2xl">Hours</div>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <div className=" ">{timeLeftEngagement.minutes}</div>
+                    <div className=" font-Playfiar text-2xl">Mins</div>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <div className=" te">{timeLeftEngagement.seconds}</div>
+                    <div className=" font-Playfiar text-2xl">Secs</div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
           </div>
         </div>
 
-        <div className="imgTextContainer lg:pt-20  flex sm:flex-col  w-full items-center sm:justify-center">
+        <div className="imgTextContainer sm:pt-7 lg:pt-20  flex sm:flex-col  w-full items-center sm:justify-center">
           <motion.div
             initial={{ x: 250, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
@@ -99,7 +189,7 @@ const WeddingDetails = ({ timeLineRef }) => {
             transition={{ type: "spring", stiffness: 20 }}
             className="imgTitleContainer text-5xl font-greatVibes text-gradient p-2"
           >
-            Wedding Details
+            Wedding
           </motion.div>
           <motion.div
             initial={{ y: 250, scale: 2, opacity: 0 }}
@@ -162,6 +252,38 @@ const WeddingDetails = ({ timeLineRef }) => {
                   ></iframe>
                 </div>
               </div>
+            </div>
+            {/* Countdown */}
+            <div className="bg-cover text-black px-2">
+              <motion.div
+                className="mt-12 backdrop:blur-3xl"
+                initial={{ x: 50, opacity: 0 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: false }}
+                transition={{ duration: 1.2, stiffness: 30, delay: 0.8 }}
+              >
+                <div className="sm:text-3xl lg:text-5xl text-center  font-dancingScript mb-6 backdrop-blur">
+                  Don't Miss the Day !
+                </div>
+                <div className="flex justify-center sm:text-xl lg:gap-10 lg:text-5xl font-dancingScript space-x-8 text-">
+                  <div className="flex flex-col gap-3">
+                    <div className=" ">{timeLeftWedding.days}</div>
+                    <div className=" font-Playfiar text-2xl">Days</div>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <div className="  ">{timeLeftWedding.hours}</div>
+                    <div className=" font-Playfiar text-2xl">Hours</div>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <div className=" ">{timeLeftWedding.minutes}</div>
+                    <div className=" font-Playfiar text-2xl">Mins</div>
+                  </div>
+                  <div className="flex flex-col gap-3">
+                    <div className=" te">{timeLeftWedding.seconds}</div>
+                    <div className=" font-Playfiar text-2xl">Secs</div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </div>
