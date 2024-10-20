@@ -2,18 +2,20 @@
 import React, { useState } from "react";
 import { motion, useMotionValue, useTransform } from "framer-motion";
 
-import image1 from "../../assets/heroGallery/1dibin.jpg";
-import image2 from "../../assets/heroGallery/wed2.jpeg";
-import image3 from "../../assets/heroGallery/wed3.avif";
+import image1 from "../../assets/heroGallery/1dibin.jpeg";
+
+import image3 from "../../assets/heroGallery/3dibin.jpg";
+// import image2 from "../../assets/heroGallery/wed2.jpeg";
 import image4 from "../../assets/heroGallery/2dibin.jpg";
-import image5 from "../../assets/heroGallery/1dibin.jpg";
+import image5 from "../../assets/heroGallery/1dibin.jpeg";
 
 const CardSwipe = () => {
   const cardData = [
     { id: 1, url: image1, title: "Card 1" },
-    { id: 2, url: image2, title: "Card 2" },
-    { id: 3, url: image3, title: "Card 3" },
+    // { id: 2, url: image2, title: "Card 2" },
     { id: 4, url: image4, title: "Card 4" },
+
+    { id: 3, url: image3, title: "Card 3" },
     { id: 5, url: image5, title: "Card 5" },
   ];
   const [cards, setCards] = useState(cardData);

@@ -29,7 +29,7 @@ const Hero = ({heroRef}) => {
             >
               <span>
                 <p className="text-xl md:text-2xl lg:3xl font-playwriteCuba">
-                  10 NOVEMBER 2024
+                 3rd & 10th November 2024
                 </p>
               </span>
             </motion.div>
@@ -41,7 +41,7 @@ const Hero = ({heroRef}) => {
             >
               <span>
                 <p className=" p-2   border-r-white sm:text-5xl lg:text-7xl font-greatVibes">
-                  Save The Date
+                  Save The Dates
                 </p>
               </span>
             </motion.div>
