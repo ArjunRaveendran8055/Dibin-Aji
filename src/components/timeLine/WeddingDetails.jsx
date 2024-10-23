@@ -73,7 +73,7 @@ const WeddingDetails = ({ timeLineRef }) => {
   }, [weddingDate, engagementDate]);
 
   return (
-    <section ref={timeLineRef} className="sm:pt-7 lg:pt-40 overflow-hidden">
+    <section ref={timeLineRef} className="sm:pt-7 lg:pt-20 overflow-hidden">
       <div className="mainImgDiv max-w-7xl mx-auto sm:px-2 lg:px-0 flex flex-col items-center">
         <div className="imgTextContainer flex sm:flex-col  w-full items-center sm:justify-center">
           <motion.div

@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import square1 from "../../assets/photoGallery/Nsquare1.jpg";
-import square2 from "../../assets/photoGallery/Nsquare2.jpg";
-import square3 from "../../assets/photoGallery/Nsquare3.jpg";
-import square4 from "../../assets/photoGallery/Nsquare4.jpg";
-import square5 from "../../assets/photoGallery/Nsquare5.webp";
+import square1 from "../../assets/photoGallery/gs1.webp";
+import square2 from "../../assets/photoGallery/gs2.webp";
+import square3 from "../../assets/photoGallery/gs3.webp";
+import square4 from "../../assets/photoGallery/gs4.webp";
 
-import wide1 from "../../assets/photoGallery/wide1.webp";
-import wide2 from "../../assets/photoGallery/Nwide2.jpg";
-import wide3 from "../../assets/photoGallery/Nwide3.webp";
-import wide4 from "../../assets/photoGallery/Nwide4.jpg";
+
+import wide1 from "../../assets/photoGallery/gL3.webp";
+import wide2 from "../../assets/photoGallery/gL4.webp";
+import wide3 from "../../assets/photoGallery/gL1.webp";
+import wide4 from "../../assets/photoGallery/gL2.webp";
 
 const images = [
   { src: square1, type: "square", name: "square1" },
@@ -19,8 +19,7 @@ const images = [
   { src: square3, type: "square", name: "square3" },
   { src: square4, type: "square", name: "square4" },
   { src: wide4, type: "wide", name: "wide4" },
-  { src: wide1, type: "wide", name: "wide1" },
-  { src: square1, type: "square", name: "square1" },
+ 
 ];
 
 const Masonry = () => {
