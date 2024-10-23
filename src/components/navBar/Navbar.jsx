@@ -30,7 +30,7 @@ const Navbar = ({ sectionRefs }) => {
         <div className="hidden md:flex space-x-6 text-gray-700 font-semibold">
           <ul className="flex flex-row gap-5 font-bold">
             <li onClick={() => handleNavClick(sectionRefs.hero)}>
-              Wedding Date
+              Home
             </li>
             <li onClick={() => handleNavClick(sectionRefs.ourStories)}>
               Our Stories
