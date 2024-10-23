@@ -29,11 +29,11 @@ const Navbar = ({ sectionRefs }) => {
         {/* Navigation Links */}
         <div className="hidden md:flex space-x-6 text-gray-700 font-semibold">
           <ul className="flex flex-row gap-5 font-bold">
-            <li onClick={() => handleNavClick(sectionRefs.ourStories)}>
-              Our Stories
-            </li>
             <li onClick={() => handleNavClick(sectionRefs.hero)}>
               Wedding Date
+            </li>
+            <li onClick={() => handleNavClick(sectionRefs.ourStories)}>
+              Our Stories
             </li>
             <li onClick={() => handleNavClick(sectionRefs.timeLine)}>
               Wedding Details
@@ -73,6 +73,14 @@ const Navbar = ({ sectionRefs }) => {
             <div className="sideBarChild w-52 h-full bg-white flex justify-center items-center">
               <ul className="flex flex-col gap-4">
                 <li
+                  className="text-black text-xl w-full border border-black shadow-md px-4 py-2 rounded-full text-center"
+                  onClick={() => {
+                    handleNavClick(sectionRefs.hero);
+                  }}
+                >
+                  Home
+                </li>
+                <li
                   className="text-black text-xl w-full border border-black shadow-mdpx-4 py-2 rounded-full text-center"
                   onClick={() => {
                     handleNavClick(sectionRefs.ourStories);
@@ -80,14 +88,7 @@ const Navbar = ({ sectionRefs }) => {
                 >
                   Our Story
                 </li>
-                <li
-                  className="text-black text-xl w-full border border-black shadow-md px-4 py-2 rounded-full text-center"
-                  onClick={() => {
-                    handleNavClick(sectionRefs.hero);
-                  }}
-                >
-                  Wedding Date
-                </li>
+
                 <li
                   className="text-black text-xl w-full border border-black shadow-md  px-4 py-2 rounded-full text-center"
                   onClick={() => {
