@@ -55,7 +55,7 @@ const Thanks = () => {
             </div>
           </motion.h2>
         </div>
-        <motion.p
+        <motion.div
           // This will be tracked for visibility
           className=" sm:text-2xl md:text-3xl lg:text-4xl text-graylight text-justify sm:px-1 font-dancingScript mb-8 tracking-wide"
           initial={{ x: -250, opacity: 0 }}
@@ -74,7 +74,7 @@ const Thanks = () => {
               <span>Dibin & Aji</span>
             </span>
           </div>
-        </motion.p>
+        </motion.div>
       </div>
     </section>
   );
